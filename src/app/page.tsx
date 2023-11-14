@@ -214,7 +214,7 @@ export default function Home() {
               How easy it is to use prompt template?
             </h3>
             <p className={styledFaqItem.answer}>
-              Come with a feature that perform full search on all the prompt templates, intuitive keyboard control and shortcut included.
+              Perform full search on all the prompt templates, prompt insertion in any input and textarea with intuitive keyboard control.
             </p>
           </motion.div>
           <motion.div variants={itemVariants} className={styledFaqItem.item} >

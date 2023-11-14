@@ -58,7 +58,7 @@ export default function Privacy() {
         <h2 className={sectionTitle}>
           Privacy Policy
         </h2>
-        <div className={vstack({ w: 800, alignItems: 'start', gap: 4, textStyle: 'body' })}>
+        <div className={vstack({ w: 800, alignItems: 'start', gap: 4, textStyle: 'body', marginBottom: 20 })}>
           <p className={css({alignSelf: 'end'})}>Last updated: 2023 November 14</p>
           <div className={divider({color: 'hsla(0,0%,100%,.1)', marginBottom: 8})}/>
           <p>This Privacy Policy explains how Prompkit collects, uses, and discloses information about users of the Prompkit (Extension). By installing or using the Extension, you agree to the terms of this Privacy Policy.</p>
