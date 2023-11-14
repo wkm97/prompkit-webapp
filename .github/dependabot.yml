@@ -1,0 +1,19 @@
+# Basic dependabot.yml file with
+# minimum configuration for two package managers
+
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'saturday'
+    versioning-strategy: 'increase'
+    labels:
+      - 'dependencies'
+    open-pull-requests-limit: 5
+    commit-message:
+      # cause a release for non-dev-deps
+      prefix: fix(deps)
+      # no release for dev-deps
+      prefix-development: chore(dev-deps)
