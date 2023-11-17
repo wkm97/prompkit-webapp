@@ -1,7 +1,6 @@
 'use client'
-import { styled } from '@/styled-system/jsx'
 import { css } from '../styled-system/css'
-import { center, container, float, grid, gridItem, hstack, vstack, wrap } from '@/styled-system/patterns'
+import { center, container, grid, gridItem, hstack, vstack } from '@/styled-system/patterns'
 import Image from 'next/image'
 import { button } from '@/components/atomic/button'
 import { token } from '@/styled-system/tokens'
@@ -9,6 +8,7 @@ import { featureCard } from '@/components/atomic-slot.ts/feature-card'
 import { faqItem } from '@/components/atomic-slot.ts/faq-item'
 import { Variants, motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { useRef, useState } from 'react'
+import { LandingIcon } from '@/components/landing-icon'
 
 const sectioncss = center({
   minH: 'screen',
@@ -107,20 +107,22 @@ export default function Home() {
           <Image src="/icon.png" alt="icon" width={32} height={32} />
           <span>Prompkit</span>
         </div>
-        <button className={button({ visual: 'solid', size: 'sm' })} style={{ borderRadius: token.var('radii.lg') }}>
-          Add to browser
-        </button>
+        <a href='https://chromewebstore.google.com/detail/prompkit-the-ai-prompt-ma/ibjdmahmnglampiibdaklmffpiofcnan' target='_blank'>
+          <button className={button({ visual: 'solid', size: 'sm' })} style={{ borderRadius: token.var('radii.lg') }}>
+            Add to browser
+          </button>
+        </a>
       </motion.header>}
       <section className={sectioncss} id="hero-section">
         <div className={vstack({ gap: 6 })}>
-          <Image src="/icon.png" alt="icon" width={280} height={280} loading='eager' />
+          <LandingIcon />
           <h1 className={css({ textStyle: 'heading/L1' })}>
             <span>Take control of AI prompts with <span className={css({ bgGradient: 'to-r', gradientFrom: 'brand.primary', gradientTo: 'brand.secondary', backgroundClip: 'text', color: 'transparent' })}>Prompkit</span></span>
           </h1>
           <span className={css({ textStyle: 'body' })}>Simplify way to keep your favorite prompts with our browser extension.</span>
 
           <div className={hstack({ flexWrap: 'wrap', justify: 'center' })}>
-            <a href='#faq-section'>
+            <a href='https://chromewebstore.google.com/detail/prompkit-the-ai-prompt-ma/ibjdmahmnglampiibdaklmffpiofcnan' target='_blank'>
               <button ref={installButton} className={button({ visual: 'solid', size: 'md' })} style={{ width: token.var('spacing.80') }}>
                 Add to browser
               </button>
