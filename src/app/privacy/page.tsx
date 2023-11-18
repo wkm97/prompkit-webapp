@@ -39,7 +39,7 @@ const sectionTitle = css({
 
 export default function Privacy() {
   return (
-    <main>
+    <main className={container()}>
       <header
         className={headercss}
       >
@@ -58,7 +58,7 @@ export default function Privacy() {
         <h2 className={sectionTitle}>
           Privacy Policy
         </h2>
-        <div className={vstack({ w: 800, alignItems: 'start', gap: 4, textStyle: 'body', marginBottom: 20 })}>
+        <div className={vstack({ alignItems: 'start', gap: 4, textStyle: 'body', marginBottom: 20 })}>
           <p className={css({alignSelf: 'end'})}>Last updated: 2023 November 14</p>
           <div className={divider({color: 'hsla(0,0%,100%,.1)', marginBottom: 8})}/>
           <p>This Privacy Policy explains how Prompkit collects, uses, and discloses information about users of the Prompkit (Extension). By installing or using the Extension, you agree to the terms of this Privacy Policy.</p>
@@ -92,9 +92,12 @@ export default function Privacy() {
       </section>
       <footer className={hstack({
         justify: 'space-around',
-        p: 8,
+        p: 2,
         fontSize: 'sm',
         borderTop: '1px solid hsla(0,0%,100%,.1)',
+        sm: {
+          p: 8
+        }
       })}>
         <span>
           Copyright © 2023 Prompkit

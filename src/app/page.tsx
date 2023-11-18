@@ -1,6 +1,6 @@
 'use client'
 import { css } from '../styled-system/css'
-import { center, container, grid, gridItem, hstack, vstack } from '@/styled-system/patterns'
+import { box, center, container, grid, gridItem, hstack, vstack } from '@/styled-system/patterns'
 import Image from 'next/image'
 import { button } from '@/components/atomic/button'
 import { token } from '@/styled-system/tokens'
@@ -13,7 +13,8 @@ import { LandingIcon } from '@/components/landing-icon'
 const sectioncss = center({
   minH: 'screen',
   flexDirection: 'column',
-  padding: 8
+  marginBottom: 10,
+  sm: { marginBottom: 0 }
 })
 
 const sectionTitle = css({
@@ -23,13 +24,14 @@ const sectionTitle = css({
   gradientTo: 'brand.primary',
   backgroundClip: 'text',
   color: 'transparent',
-  marginBottom: 10
+  marginBottom: 2,
+  sm: { marginBottom: 10 }
 })
 
 const headercss = container({
   position: 'sticky',
   display: 'flex',
-  width: 750,
+  width: 300,
   justifyContent: 'space-between',
   fontSize: 'xl',
   padding: 3,
@@ -40,7 +42,10 @@ const headercss = container({
   boxShadow: '2xl',
   borderRadius: 'full',
   backdropBlur: 'md',
-  border: '1px solid rgba(255, 255, 255, 0.2)'
+  border: '1px solid rgba(255, 255, 255, 0.2)',
+  sm: {
+    width: 600
+  }
 })
 
 export default function Home() {
@@ -87,7 +92,7 @@ export default function Home() {
   };
 
   return (
-    <main>
+    <main className={container()}>
       {showHeader && <motion.header
         className={headercss}
         variants={{
@@ -119,7 +124,7 @@ export default function Home() {
           <h1 className={css({ textStyle: 'heading/L1' })}>
             <span>Take control of AI prompts with <span className={css({ bgGradient: 'to-r', gradientFrom: 'brand.primary', gradientTo: 'brand.secondary', backgroundClip: 'text', color: 'transparent' })}>Prompkit</span></span>
           </h1>
-          <span className={css({ textStyle: 'body' })}>Simplify way to keep your favorite prompts with our browser extension.</span>
+          <span className={css({ textStyle: 'body', fontSize: 'xl' })}>Simplify way to keep your favorite prompts with our browser extension.</span>
 
           <div className={hstack({ flexWrap: 'wrap', justify: 'center' })}>
             <a href='https://chromewebstore.google.com/detail/prompkit-the-ai-prompt-ma/ibjdmahmnglampiibdaklmffpiofcnan' target='_blank'>
@@ -146,9 +151,9 @@ export default function Home() {
           initial='hidden'
           whileInView='show'
           viewport={{ once: true, amount: 'some' }}
-          className={grid({ columns: 3, gap: 6 })}
+          className={grid({ columns: 1, gap: 4, sm: { columns: 2, gap: 6 } })}
         >
-          <motion.div variants={itemVariants} className={gridItem({ colSpan: 2 })}>
+          <motion.div variants={itemVariants} className={gridItem({ colSpan: 1, sm: { gridColumnStart: 'span 2', gridColumnEnd: 'auto' } })}>
             <div className={styledFeatureCard.container} >
               <h3 className={styledFeatureCard.title}>Organize your prompts</h3>
               <p className={styledFeatureCard.description}>Add, edit, delete and search for your favorite prompts</p>
@@ -239,9 +244,12 @@ export default function Home() {
       </section>
       <footer className={hstack({
         justify: 'space-around',
-        p: 8,
+        p: 2,
         fontSize: 'sm',
         borderTop: '1px solid hsla(0,0%,100%,.1)',
+        sm: {
+          p: 8
+        }
       })}>
         <span>
           Copyright © 2023 Prompkit

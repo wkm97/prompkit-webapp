@@ -15,6 +15,12 @@ export default defineConfig({
     light: '[data-theme=light] &',
     dark: '[data-theme=dark] &',
   },
+  globalCss: {
+    ':root': {
+      fontSize: '12px',
+      sm: {fontSize: '16px'}
+    }
+  },
   theme: {
     extend: {
       tokens: {
